@@ -19,15 +19,16 @@ form.addEventListener('submit', toJSON);
 
 
 function addFile() {
-    const file = document.querySelector('input').files[0];
-    const reader = new FileReader();
+    document.getElementById('uploadButton').addEventListener('click', function() {
+        const reader = new FileReader();
+        const file = document.querySelector('input').files[0];
 
-    reader.addEventListener('loadend', function() {
-        const textArea = document.getElementById('textEditor');
-        textArea.innerHTML = reader.result;
+        reader.addEventListener('load', function() {
+            const textArea = document.getElementById('textEditor');
+            textArea.value = reader.result;
+        })
+        reader.readAsText(file);
     })
-
-    reader.readAsText(file);
 }
 
 addFile()
