@@ -19,13 +19,13 @@ form.addEventListener('submit', toJSON);
 
 
 function addFile() {
-    const file = document.getElementById('myFile').files[0];
-
+    const file = document.querySelector('input').files[0];
     const reader = new FileReader();
-    reader.onload = function (e) {
+
+    reader.addEventListener('loadend', function() {
         const textArea = document.getElementById('textEditor');
-        textArea.value = e.target.result;
-    };
+        textArea.innerHTML = reader.result;
+    })
 
     reader.readAsText(file);
 }
