@@ -7,12 +7,16 @@
     <title>A simple text editor</title>
 </head>
 <body>
-    <textarea id="textEditor"
+    <form>
+        <input id="myFile" type="file"/>
+        <label for="userText">your text</label>
+    <textarea id="textEditor" name="userText"
           rows="5" cols="33">
-   
     </textarea>
-    <input id="myFile" type="file"/>
-    <button type="button" onclick="downloadFile()">Save your file</button>
+    <button type="submit" >Save your file</button>
+    </form>
+
+   
 
     <script src="index.js"></script>    
 </body>
