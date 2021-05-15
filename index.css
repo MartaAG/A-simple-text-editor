@@ -1,0 +1,7 @@
+#textEditor {
+    border: 1px solid #cccccc;
+    margin-top: 1em;
+    width: 500px;
+    overflow: auto;
+    padding: 1em;
+}

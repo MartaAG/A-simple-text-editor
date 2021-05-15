@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>A simple text editor</title>
 </head>
+
 <body>
-    <form>
-        <label for="userText">your text</label>
-    <textarea id="textEditor" name="userText" rows="5" cols="33">
-    </textarea>
-    <input id="myFile" type="file"/>
-    <button id="uploadButton">show the results</button>
-    <button type="submit" >Save your file</button>
-    </form>
-
-    <div id="htmlToSerialize">
-        Hey, take me and change me into <strong>JSON</strong>
-        Some steps to follow:
-        <ul>
-            <li>take this text</li>
-            <li>change into json</li>
-            <li>store in in json file</li>
-        </ul>
-        Then, take this json and render <em>it as html</em>
+    <button onclick="convertToJSON()">save me</button>
+    <input id="myJSON" type="file" />
+    <button onclick="uploadJSON()">show it!</button>
+  
+    <h1>A simple rich editor</h1>
+    <button onclick="addStyles('bold')"><strong>B</strong></button>
+    <button onclick="addStyles('italic')"><em>I</em></button>
+    <button onclick="addStyles('insertUnorderedList')">List</button>
+    <div contenteditable="true" id="textEditor">
     </div>
-    <button id="saveButton">save me</button>
-    <input id="myJSON" type="file"/>
-    <button id="renderingHTML">show it!</button>
-    <div id="output"></div>
 
-    <script src="index.js"></script>    
+
+    <script src="index.js"></script>
 </body>
+
 </html>
